@@ -12,6 +12,10 @@
 		8C51462E1E72FB0C001D5FDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C51462C1E72FB0C001D5FDD /* Main.storyboard */; };
 		8C5146301E72FB0C001D5FDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C51462F1E72FB0C001D5FDD /* Assets.xcassets */; };
 		8C5146331E72FB0C001D5FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5146311E72FB0C001D5FDD /* LaunchScreen.storyboard */; };
+		8C5146471E72FC0D001D5FDD /* correct_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5146441E72FC0D001D5FDD /* correct_icon@3x.png */; };
+		8C5146481E72FC0D001D5FDD /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5146451E72FC0D001D5FDD /* Disclaimer.xib */; };
+		8C5146491E72FC0D001D5FDD /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5146461E72FC0D001D5FDD /* DisclaimerView.swift */; };
+		8CAF5F7F1E78158C003A1730 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CAF5F7E1E78158C003A1730 /* test.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		8C51462F1E72FB0C001D5FDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C5146321E72FB0C001D5FDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C5146341E72FB0C001D5FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C5146441E72FC0D001D5FDD /* correct_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "correct_icon@3x.png"; sourceTree = "<group>"; };
+		8C5146451E72FC0D001D5FDD /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
+		8C5146461E72FC0D001D5FDD /* DisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		8CAF5F7E1E78158C003A1730 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +64,24 @@
 			children = (
 				8C5146281E72FB0C001D5FDD /* AppDelegate.swift */,
 				8C51462A1E72FB0C001D5FDD /* ViewController.swift */,
+				8CAF5F7E1E78158C003A1730 /* test.txt */,
+				8C5146431E72FC0D001D5FDD /* disclaimer */,
 				8C51462C1E72FB0C001D5FDD /* Main.storyboard */,
 				8C51462F1E72FB0C001D5FDD /* Assets.xcassets */,
 				8C5146311E72FB0C001D5FDD /* LaunchScreen.storyboard */,
 				8C5146341E72FB0C001D5FDD /* Info.plist */,
 			);
 			path = ScrollableDisclaimerAlert;
+			sourceTree = "<group>";
+		};
+		8C5146431E72FC0D001D5FDD /* disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				8C5146441E72FC0D001D5FDD /* correct_icon@3x.png */,
+				8C5146451E72FC0D001D5FDD /* Disclaimer.xib */,
+				8C5146461E72FC0D001D5FDD /* DisclaimerView.swift */,
+			);
+			path = disclaimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +147,9 @@
 				8C5146331E72FB0C001D5FDD /* LaunchScreen.storyboard in Resources */,
 				8C5146301E72FB0C001D5FDD /* Assets.xcassets in Resources */,
 				8C51462E1E72FB0C001D5FDD /* Main.storyboard in Resources */,
+				8C5146481E72FC0D001D5FDD /* Disclaimer.xib in Resources */,
+				8CAF5F7F1E78158C003A1730 /* test.txt in Resources */,
+				8C5146471E72FC0D001D5FDD /* correct_icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C51462B1E72FB0C001D5FDD /* ViewController.swift in Sources */,
+				8C5146491E72FC0D001D5FDD /* DisclaimerView.swift in Sources */,
 				8C5146291E72FB0C001D5FDD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +287,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = URQ7BT5GNP;
 				INFOPLIST_FILE = ScrollableDisclaimerAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.nogol.ScrollableDisclaimerAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +301,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = URQ7BT5GNP;
 				INFOPLIST_FILE = ScrollableDisclaimerAlert/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cz.nogol.ScrollableDisclaimerAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -302,6 +328,7 @@
 				8C5146391E72FB0C001D5FDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DisclaimerDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZc-YS-xcK">
+                                <rect key="frame" x="110" y="294.5" width="154" height="30"/>
+                                <state key="normal" title="Load content from File"/>
+                                <connections>
+                                    <action selector="loadContentFromFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Py0-eY-TBy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WW-NK-vzQ">
+                                <rect key="frame" x="105" y="332.5" width="164" height="30"/>
+                                <state key="normal" title="Load content as Strning"/>
+                                <connections>
+                                    <action selector="loadContentAsString:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIp-c2-HTO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3u-YP-2oI">
+                                <rect key="frame" x="156.5" y="211" width="62.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-rx-cbE">
+                                <rect key="frame" x="103" y="439" width="169" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kill app decline " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rJ-1o-Td7">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DUL-yM-UTg">
+                                        <rect key="frame" x="120" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2WW-NK-vzQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4fs-6w-JK1"/>
+                            <constraint firstItem="2WW-NK-vzQ" firstAttribute="top" secondItem="iZc-YS-xcK" secondAttribute="bottom" constant="8" id="Ggp-sO-jGX"/>
+                            <constraint firstItem="iZc-YS-xcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JIw-cf-OfP"/>
+                            <constraint firstItem="iZc-YS-xcK" firstAttribute="top" secondItem="K3u-YP-2oI" secondAttribute="bottom" constant="63" id="Oms-BR-lJu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="30Y-rx-cbE" secondAttribute="bottom" constant="197" id="aBk-49-ZaP"/>
+                            <constraint firstItem="K3u-YP-2oI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="191" id="dgn-9V-pD7"/>
+                            <constraint firstItem="30Y-rx-cbE" firstAttribute="top" secondItem="2WW-NK-vzQ" secondAttribute="bottom" constant="76.5" id="krt-Lw-2vZ"/>
+                            <constraint firstItem="30Y-rx-cbE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pBt-3X-nyO"/>
+                            <constraint firstItem="K3u-YP-2oI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zEM-MG-kRS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="killSwitch" destination="DUL-yM-UTg" id="LK4-uU-X2e"/>
+                        <outlet property="statusLabel" destination="K3u-YP-2oI" id="co9-4V-pwg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
