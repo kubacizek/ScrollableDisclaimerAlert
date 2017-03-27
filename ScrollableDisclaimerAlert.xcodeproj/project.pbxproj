@@ -15,6 +15,7 @@
 		8C5146471E72FC0D001D5FDD /* correct_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5146441E72FC0D001D5FDD /* correct_icon@3x.png */; };
 		8C5146481E72FC0D001D5FDD /* Disclaimer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C5146451E72FC0D001D5FDD /* Disclaimer.xib */; };
 		8C5146491E72FC0D001D5FDD /* DisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5146461E72FC0D001D5FDD /* DisclaimerView.swift */; };
+		8C7C93C41E8957F900769097 /* MultipleDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C93C31E8957F900769097 /* MultipleDisclaimerView.swift */; };
 		8CAF5F7F1E78158C003A1730 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CAF5F7E1E78158C003A1730 /* test.txt */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		8C5146441E72FC0D001D5FDD /* correct_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "correct_icon@3x.png"; sourceTree = "<group>"; };
 		8C5146451E72FC0D001D5FDD /* Disclaimer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Disclaimer.xib; sourceTree = "<group>"; };
 		8C5146461E72FC0D001D5FDD /* DisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisclaimerView.swift; sourceTree = "<group>"; };
+		8C7C93C31E8957F900769097 /* MultipleDisclaimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleDisclaimerView.swift; sourceTree = "<group>"; };
 		8CAF5F7E1E78158C003A1730 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				8C5146441E72FC0D001D5FDD /* correct_icon@3x.png */,
 				8C5146451E72FC0D001D5FDD /* Disclaimer.xib */,
 				8C5146461E72FC0D001D5FDD /* DisclaimerView.swift */,
+				8C7C93C31E8957F900769097 /* MultipleDisclaimerView.swift */,
 			);
 			path = disclaimer;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				8C51462B1E72FB0C001D5FDD /* ViewController.swift in Sources */,
 				8C5146491E72FC0D001D5FDD /* DisclaimerView.swift in Sources */,
 				8C5146291E72FB0C001D5FDD /* AppDelegate.swift in Sources */,
+				8C7C93C41E8957F900769097 /* MultipleDisclaimerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

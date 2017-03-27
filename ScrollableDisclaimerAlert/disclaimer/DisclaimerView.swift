@@ -3,14 +3,14 @@
 //  ScrollableDisclaimerViewAlert
 //
 //  Created by Kuba on 09/03/2017.
-//  Copyright © 2017 HuD. All rights reserved.
+//  Copyright © 2017 Jakub Cizek. All rights reserved.
 //
 
 import UIKit
 
 protocol DisclaimerViewDelegate: class {
-    func acceptDisclaimer()
-    func cancelDisclaimer()
+    func acceptDisclaimer(index: Int)
+    func cancelDisclaimer(index: Int)
 }
 
 class DisclaimerView: UIView {
@@ -21,6 +21,9 @@ class DisclaimerView: UIView {
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var title: UILabel!
     
+    var pageControl = UIPageControl()
+    var scrollView = UIScrollView()
+    
     let kAnimationDuration = 0.3
     
     // MARK: Delegate
@@ -28,11 +31,33 @@ class DisclaimerView: UIView {
     weak var delegate: DisclaimerViewDelegate?
 
     @IBAction func cancelAction(_ sender: Any) {
-        delegate?.cancelDisclaimer()
+        delegate?.cancelDisclaimer(index: pageControl.currentPage)
+        
+        let count = pageControl.numberOfPages
+        let currentPage = pageControl.currentPage
+        
+        if count > currentPage {
+            var frame: CGRect = scrollView.frame
+            frame.origin.x = frame.size.width * CGFloat(currentPage - 1);
+            frame.origin.y = 0;
+            scrollView.scrollRectToVisible(frame, animated: true)
+            pageControl.currentPage = currentPage-1
+        }
     }
     
     @IBAction func acceptAction(_ sender: Any) {
-        delegate?.acceptDisclaimer()
+        delegate?.acceptDisclaimer(index: pageControl.currentPage)
+        
+        let count = pageControl.numberOfPages
+        let currentPage = pageControl.currentPage
+        
+        if count - 1 > currentPage {
+            var frame: CGRect = scrollView.frame
+            frame.origin.x = frame.size.width * CGFloat(currentPage + 1);
+            frame.origin.y = 0;
+            scrollView.scrollRectToVisible(frame, animated: true)
+            pageControl.currentPage = currentPage+1
+        }
     }
     
     // MARK: Implementation
@@ -43,35 +68,18 @@ class DisclaimerView: UIView {
         return disclaimerView
     }
     
-    class func initWith(title: String, content: String, cancelTitle: String = "Cancel", acceptTitle: String = "Confirm", frame: CGRect = UIScreen.main.bounds, delegate: DisclaimerViewDelegate) -> DisclaimerView {
+    class func initWith(title: String, filePath: String? = nil, fileExtension: String? = nil, content: String = "", cancelTitle: String = "Cancel", acceptTitle: String = "Confirm", frame: CGRect = UIScreen.main.bounds, delegate: DisclaimerViewDelegate) -> DisclaimerView {
         
         let disclaimerView = UINib(nibName: "Disclaimer", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! DisclaimerView
         
         disclaimerView.title.text = title
-        disclaimerView.content.text = content
-        disclaimerView.acceptButton.setTitle(acceptTitle, for: .normal)
-        disclaimerView.cancelButton.setTitle(cancelTitle, for: .normal)
         
-        disclaimerView.delegate = delegate
-        
-        disclaimerView.frame = frame
-        
-        disclaimerView.cancelButton.borders(for: [.top, .right], color: .init(colorLiteralRed: 0.9, green: 0.9, blue: 0.9, alpha: 1))
-        disclaimerView.acceptButton.borders(for: [.top], color: .init(colorLiteralRed: 0.9, green: 0.9, blue: 0.9, alpha: 1))
-        
-        disclaimerView.backgroundColor = .lightGray
-        
-        return disclaimerView
-    }
-    
-    class func initWith(title: String, filePath: String, fileExtension: String, cancelTitle: String = "Cancel", acceptTitle: String = "Confirm", frame: CGRect = UIScreen.main.bounds, delegate: DisclaimerViewDelegate) -> DisclaimerView {
-        
-        let disclaimerView = UINib(nibName: "Disclaimer", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! DisclaimerView
-        
-        disclaimerView.title.text = title
-
-        if let path = Bundle.main.path(forResource: filePath, ofType: fileExtension) {
-            disclaimerView.content.text = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
+        if content == "" {
+            if let path = Bundle.main.path(forResource: filePath, ofType: fileExtension) {
+                disclaimerView.content.text = try? String(contentsOfFile: path, encoding: String.Encoding.utf8)
+            }
+        } else {
+            disclaimerView.content.text = content
         }
         
         disclaimerView.acceptButton.setTitle(acceptTitle, for: .normal)

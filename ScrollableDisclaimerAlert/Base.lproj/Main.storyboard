@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DisclaimerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollableDisclaimerAlert" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -29,8 +28,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WW-NK-vzQ">
-                                <rect key="frame" x="105" y="332.5" width="164" height="30"/>
-                                <state key="normal" title="Load content as Strning"/>
+                                <rect key="frame" x="109.5" y="332.5" width="155" height="30"/>
+                                <state key="normal" title="Load content as String"/>
                                 <connections>
                                     <action selector="loadContentAsString:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SIp-c2-HTO"/>
                                 </connections>
@@ -42,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-rx-cbE">
-                                <rect key="frame" x="103" y="439" width="169" height="31"/>
+                                <rect key="frame" x="103" y="606" width="169" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kill app decline " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rJ-1o-Td7">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="31"/>
@@ -55,6 +54,13 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVP-Mn-FZW">
+                                <rect key="frame" x="116" y="370.5" width="142" height="30"/>
+                                <state key="normal" title="Load multidisclaimer"/>
+                                <connections>
+                                    <action selector="loadMutidisclaimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRe-iq-aH6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -62,10 +68,11 @@
                             <constraint firstItem="2WW-NK-vzQ" firstAttribute="top" secondItem="iZc-YS-xcK" secondAttribute="bottom" constant="8" id="Ggp-sO-jGX"/>
                             <constraint firstItem="iZc-YS-xcK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JIw-cf-OfP"/>
                             <constraint firstItem="iZc-YS-xcK" firstAttribute="top" secondItem="K3u-YP-2oI" secondAttribute="bottom" constant="63" id="Oms-BR-lJu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="30Y-rx-cbE" secondAttribute="bottom" constant="197" id="aBk-49-ZaP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="30Y-rx-cbE" secondAttribute="bottom" constant="30" id="aBk-49-ZaP"/>
                             <constraint firstItem="K3u-YP-2oI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="191" id="dgn-9V-pD7"/>
-                            <constraint firstItem="30Y-rx-cbE" firstAttribute="top" secondItem="2WW-NK-vzQ" secondAttribute="bottom" constant="76.5" id="krt-Lw-2vZ"/>
                             <constraint firstItem="30Y-rx-cbE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pBt-3X-nyO"/>
+                            <constraint firstItem="NVP-Mn-FZW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uIN-iL-htB"/>
+                            <constraint firstItem="NVP-Mn-FZW" firstAttribute="top" secondItem="2WW-NK-vzQ" secondAttribute="bottom" constant="8" id="xwM-dA-eLe"/>
                             <constraint firstItem="K3u-YP-2oI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zEM-MG-kRS"/>
                         </constraints>
                     </view>
